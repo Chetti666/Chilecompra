@@ -1,0 +1,277 @@
+ORDENES DE COMPRA
+
+Tienes acceso a información para listar:
+
+Órdenes de compra diarias 
+Órdenes de compra por código 
+Órdenes de compra diarias por estado 
+Órdenes de compra por día 
+Órdenes de compra por estado y día 
+Órdenes de compra por código de organismo público o proveedor 
+La API fue implementada para que las URLs puedan ser utilizadas mediante parámetros GET, con el objetivo de indicar las características de la petición que se ejecuta.
+
+Servicio web
+Los archivos de los recursos a los que se accede a través de api.mercadopublico.cl, utilizan las siguientes estructuras: 
+
+Formato JSON: 
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844 
+Formato JSONP: 
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?fecha=02022014&callback=respuesta&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844 
+Formato XML: 
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.xml?fecha=02022014&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844 
+IMPORTANTE
+Los estados de las órdenes de compra consultadas serán mostrados por código, descritos de la siguiente forma: 
+
+Enviada a Proveedor = “4” 
+En proceso = “5” 
+Aceptada = “6” 
+Cancelada = “9” 
+Recepción Conforme = “12” 
+Pendiente de Recepcionar = “13” 
+Recepcionada Parcialmente = “14” 
+Recepcion Conforme Incompleta = “15” 
+Tipos de consulta
+Por {código} de orden de compra
+Ejemplo de {codigo} = 2097-241-SE14
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?codigo=2097-241-SE14&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844 
+
+Por todos los estados del día actual
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?estado=todos&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844 
+
+Por todos los estados de una {fecha} específica
+Ejemplo de {fecha} = 02022014
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+Por {estado} del día actual
+Ejemplo de {estado} = ACEPTADA 
+
+{estados} de las órdenes de compra y su nomenclatura: 
+
+Enviada a Proveedor = “enviadaproveedor“
+Aceptada = “aceptada“
+Cancelada = “cancelada“
+Recepción Conforme = “recepcionconforme“
+Pendiente de Recepcionar = “pendienterecepcion“
+Recepcionada Parcialmente = “recepcionaceptadacialmente“
+Recepcion Conforme Incompleta = “recepecionconformeincompleta“
+todos = “todos“ (muestra todos los estados posibles antes señalados) 
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&estado={estado}&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&estado=aceptada&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+Por {código} de organismo público
+Ejemplo de {CódigoOrganismo} = 694
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha={fecha}&CodigoOrganismo={CódigoOrganismo}&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&CodigoOrganismo=6945&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+Por {código} de proveedor
+Ejemplo de {CódigoProveedor} = 17793
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&CodigoProveedor={CódigoProveedor}&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?fecha=02022014&CodigoProveedor=17793&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+Por {código} de proveedor
+Los resultados de las búsquedas son realizadas en base a los números de órdenes de compra enviadas en el día. Los resultados entregados contienen información básica de las órdenes de compra. 
+
+En el caso de la búsqueda por código no importa la fecha, dado que siempre se obtendrá la orden de compra solicitada. El resultado entregado posee información detallada de la orden de compra. 
+
+El formato de la fecha es ddmmaaaa, ejemplo: 12062026, obtendrá las órdenes de compra del día 12 del mes de junio del año 2026. 
+
+https://api.mercadopublico.cl/modules/OrdenCompra.aspx 
+
+Documentación de orden de compra
+Cantidad
+
+FechaCreacion 
+
+Version
+
+Listado
+
+Cantidad de órdenes de compra encontradas 
+
+Fecha de consulta
+
+Código de la orden de compra de Mercado Publico
+
+Listado de órdenes de Compra
+
+ANEXOS
+Tipo orden de compra
+Codigo
+Abreviación
+Descripción
+1
+
+OC
+
+Automática
+
+2
+
+D1
+
+Trato directo que genera Orden de Compra por proveedor único.
+
+3
+
+C1
+
+Trato directo que genera Orden de Compra por emergencia, urgencia e imprevisto.
+
+4
+
+F3
+
+Trato directo que genera Orden de Compra por confidencialidad.
+
+5
+
+G1
+
+Trato directo que genera Orden de Compra por naturaleza de negociación.
+
+6
+
+R1
+
+Orden de compra menor a 3UTM
+
+7
+
+CA
+
+Orden de compra sin resolución.
+
+8
+
+SE
+
+Sin emisión automática
+
+9
+
+CM
+
+Convenio Marco
+
+10
+
+FG
+
+Trato Directo (Art. 8 letras f y g - Ley 19.886)
+
+11
+
+TL
+
+Convenio Marco – Tienda de Libros (Obsoleto)
+
+12
+
+MC
+
+Microcompra
+
+13
+
+AG
+
+Compra Ágil
+
+14
+
+CC
+
+Compra Coordinada
+
+Unidad Monetaria
+Valor
+Descripción
+CLP
+
+CLF
+
+USD
+
+UTM
+
+EUR
+
+Peso Chileno
+
+Unidad de Fomento
+
+Dólar Americano
+
+Euro
+
+Unidad Tributaria Mensual
+
+Tipo de despacho
+Valor
+Descripción
+7
+
+9
+
+12
+
+14
+
+20
+
+21
+
+22
+
+Despachar a Dirección de envío
+
+Despachar según programa adjuntado
+
+Otra Forma de Despacho, Ver Instruc
+
+Retiramos de su bodega
+
+Despacho por courier o encomienda aérea
+
+Despacho por courier o encomienda terrestre
+
+A convenir
+
+Tipo de Pago
+Valor
+Descripción
+2
+
+1
+
+39
+
+46
+
+47
+
+48
+
+49
+
+30 días contra la recepción de la factura
+
+15 días contra la recepción de la factura
+
+Otra forma de pago
+
+50 días contra la recepción de la factura
+
+60 días contra la recepción de la factura
+
+A 45 días
+
+A más de 30 días

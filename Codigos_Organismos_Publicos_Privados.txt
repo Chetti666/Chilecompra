@@ -1,0 +1,18 @@
+CODIGOS DE ORGANISMOS PUBLICOS Y PRIVADOS
+
+Para obtener el código de un proveedor debes consumir el siguiente código indicando el RUT de la empresa a buscar (debe incluir puntos, guión y dígito verificador): 
+
+https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarProveedor?rutempresaproveedor=70.017.820-k&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844 
+ 
+Dónde: 
+
+Código Empresa: Código de la empresa Proveedor. Ejemplo de {CódigoEmpresa} = 17793 
+Nombre Empresa: Nombre de la empresa Proveedor. Ejemplo de {NombreEmpresa} = “Cámara de Comercio de Santiago A.G. (CCS)”. 
+Para obtener el código de un organismo público debes escribir el siguiente texto, el cual entrega como resultado una lista de todos los organismos públicos de la plataforma Mercado Público: 
+
+https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarComprador?ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844
+
+Dónde: 
+
+Código Empresa: Código del organismo público. Ejemplo de {CódigoEmpresa} = 6945 
+Nombre Empresa: Nombre del organismo público. Ejemplo de {NombreEmpresa} = “Dirección de Compras y Contratación Pública”. 
